@@ -11,8 +11,7 @@ COPY mysite /mysite
 
 # Set environment variables 
 ENV PORT=8000 
-ENV DATA_DIR=/data
-RUN command mkdir /data
+
 # Set the working directory
 WORKDIR /mysite 
 
