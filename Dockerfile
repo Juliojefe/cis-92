@@ -1,6 +1,6 @@
 # Start with the base Python container
 # FIXME: Update the version
-FROM docker.io/python:3.10.13
+FROM docker.io/python:3.10.13pip
 
 # Install packages that are required. 
 RUN pip install Django==4.2.9 
