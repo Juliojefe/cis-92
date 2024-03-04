@@ -4,15 +4,19 @@ FROM docker.io/python:3.10.13
 
 
 # Install packages that are required. 
+RUN pip install Django==4.2.9 
 RUN pip install psutil
-RUN pip install Django==4.2.9
-
 # Copy the Python code into the container
 COPY mysite /mysite
 
 # Set environment variables 
 ENV PORT=8000 
-
+ENV STUDENT_NAME="Julio"
+ENV SITE_NAME="Hello eveyone"
+ENV SECRET_KEY="thatsIt99"
+ENV DEBUG=1
+ENV DATA_DIR=/data
+RUN command mkdir /data
 # Set the working directory
 WORKDIR /mysite 
 
