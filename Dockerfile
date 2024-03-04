@@ -12,6 +12,12 @@ COPY mysite /mysite
 
 # Set environment variables 
 ENV PORT=8000 
+ENV STUDENT_NAME="Julio"
+ENV SITE_NAME="camote"
+ENV SECRET_KEY="ChiminoCatfoo285!"
+ENV DEBUG=1
+RUN command mkdir /data
+ENV DATA_DIR=/data
 
 # Set the working directory
 WORKDIR /mysite 
