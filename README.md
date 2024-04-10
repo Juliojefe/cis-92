@@ -14,12 +14,16 @@ Author: Julio Fernandez
 | DEBUG | 1 | Debug Option | 
 | SECRET_KEY | this-is-a-bad-key | change this (IMPORTANT) | 
 
+
 To deploy run the following commands  
 1) kubectl apply -f deployment/
-2) kubectl get all - (copy external ip into browser of choice)
-3) application has been deployed
+2) kubectl get all  (copy external ip into browser of choice)
+
+To Initilize Database Run 
+1) kubectl exec --stdin --tty pod/mysite-pod -- /bin/bash
+2) python manage.py migrate
+3) python manage.py createsuperuser
 
 To delete run
 1) kubectl get all 
-2) kubectl delete <pod and service name>
-3) application has been deleted
+2) kubectl delete service/mysite-svc pod/mysite-pod
