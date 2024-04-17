@@ -6,6 +6,7 @@ FROM docker.io/python:3.10.13
 # Install packages that are required. 
 RUN pip install psutil
 RUN pip install Django==4.2.9
+RUN pip install psycopg2
 
 # Copy the Python code into the container
 COPY mysite /mysite
@@ -16,8 +17,14 @@ ENV STUDENT_NAME="Julio"
 ENV SITE_NAME="camote"
 ENV SECRET_KEY="ChiminoCatfoo285!"
 ENV DEBUG=1
-RUN command mkdir /data
-ENV DATA_DIR=/data
+
+ENV POSTGRES_DB="mysite"
+ENV POSTGRES_USER="mysiteuser"
+ENV POSTGRES_PASSWORD="this-is-a-bad-password"
+ENV POSTGRES_HOSTNAME="localhost"
+
+# RUN command mkdir /data
+
 
 # Set the working directory
 WORKDIR /mysite 
